@@ -29,7 +29,9 @@ def ShowStack():
         return ""
     s = ""
     for i in range (TopOfStack, -1 , -1):
-        s = s + str(Stack[i]) + " "
+        s = s + str(Stack[i])
+        if i > 0:
+            s = s + " "
     return s
 
 # Exercise 3
@@ -37,7 +39,7 @@ def DecimalToBinary(Number):
     global Stack, TopOfStack
     TopOfStack = -1
     if Number == 0:
-        return 0
+        return '0'
     while Number>0:
         Push(Number % 2)
         Number = Number // 2
